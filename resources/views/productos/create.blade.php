@@ -1,9 +1,10 @@
+<!-- filepath: /c:/xampp/htdocs/proyecto_laravel/resources/views/productos/create.blade.php -->
 @extends('layouts.app')
 
 @section('content')
 <div class="container">
     <h1>Crear Nuevo Producto</h1>
-    <form action="{{ route('productos.store') }}" method="POST">
+    <form action="{{ route('productos.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="form-group">
             <label for="nombre">Nombre:</label>
@@ -41,6 +42,13 @@
                 @endforeach
             </select>
             @error('categoria_id')
+                <div class="text-danger">{{ $message }}</div>
+            @enderror
+        </div>
+        <div class="form-group">
+            <label for="imagen">Imagen:</label>
+            <input type="file" name="imagen" id="imagen" class="form-control">
+            @error('imagen')
                 <div class="text-danger">{{ $message }}</div>
             @enderror
         </div>

@@ -1,3 +1,4 @@
+<!-- filepath: /c:/xampp/htdocs/proyecto_laravel/resources/views/categorias/create.blade.php -->
 @extends('layouts.app')
 
 @section('content')
@@ -14,5 +15,6 @@
         </div>
         <button type="submit" class="btn btn-primary mt-3">Guardar</button>
     </form>
+    <a href="{{ route('categorias.index') }}" class="btn btn-secondary mt-3">Volver a la lista de categorías</a>
 </div>
 @endsection

@@ -1,3 +1,4 @@
+<!-- filepath: /c:/xampp/htdocs/proyecto_laravel/resources/views/productos/index.blade.php -->
 @extends('layouts.app')
 
 @section('content')
@@ -18,6 +19,7 @@
                 <th>Precio</th>
                 <th>Stock</th>
                 <th>Categoría</th>
+                <th>Imagen</th>
                 <th>Acciones</th>
             </tr>
         </thead>
@@ -29,6 +31,14 @@
                 <td>{{ $producto->stock }}</td>
                 <td>{{ $producto->categoria->nombre }}</td>
                 <td>
+                    @if($producto->imagen)
+                        <img src="{{ asset('images/' . $producto->imagen) }}" alt="{{ $producto->nombre }}" width="50">
+                    @else
+                        No hay imagen
+                    @endif
+                </td>
+                <td>
+                    <a href="{{ route('productos.show', $producto->id) }}" class="btn btn-info btn-sm">Ver</a>
                     <a href="{{ route('productos.edit', $producto->id) }}" class="btn btn-primary btn-sm">Editar</a>
                     <form action="{{ route('productos.destroy', $producto->id) }}" method="POST" style="display:inline;">
                         @csrf
