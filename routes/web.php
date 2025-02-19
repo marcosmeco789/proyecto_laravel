@@ -7,9 +7,6 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 
-// Ensure that the LoginController class exists in the specified namespace
-// If it doesn't exist, create it in the App\Http\Controllers directory
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,25 +18,22 @@ use App\Http\Controllers\Auth\RegisterController;
 |
 */
 
-
 // Ruta para el login
 Route::get('login', [LoginController::class, 'showLoginForm'])->name('login');
 Route::post('login', [LoginController::class, 'login']);
 Route::post('logout', [LoginController::class, 'logout'])->name('logout');
 
-
 // Ruta para el registro
 Route::get('register', [RegisterController::class, 'showRegistrationForm'])->name('register');
 Route::post('register', [RegisterController::class, 'register']);
 
-
-// Redirigir la ruta raíz al login
-Route::get('/', function () {
-    return redirect()->route('login');
-});
-
-// Ruta para el home (página principal después del login)
+// Ruta para el home (página principal accesible para todos)
 Route::get('/home', [HomeController::class, 'index'])->name('home');
+
+// Redirigir la ruta raíz al home
+Route::get('/', function () {
+    return redirect()->route('home');
+});
 
 // Grupo de rutas protegidas por autenticación
 Route::middleware('auth')->group(function () {
