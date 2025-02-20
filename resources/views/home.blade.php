@@ -19,7 +19,7 @@
                 <div class="card-body">
                     <h5 class="card-title">Suplementos</h5>
                     <p class="card-text">Descubre nuestra amplia gama de suplementos para mejorar tu rendimiento.</p>
-                    <a href="#" class="btn btn-primary">Ver Productos</a>
+                    <a href="http://127.0.0.1:8000/productos" class="btn btn-primary">Ver Productos</a>
                 </div>
             </div>
         </div>
@@ -28,7 +28,7 @@
                 <div class="card-body">
                     <h5 class="card-title">Ropa Deportiva</h5>
                     <p class="card-text">Explora nuestra colección de ropa deportiva para todos los deportes.</p>
-                    <a href="#" class="btn btn-primary">Ver Productos</a>
+                    <a href="http://127.0.0.1:8000/productos" class="btn btn-primary">Ver Productos</a>
                 </div>
             </div>
         </div>
