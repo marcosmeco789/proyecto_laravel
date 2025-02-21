@@ -21,7 +21,7 @@
             @enderror
         </div>
         <div class="form-group">
-            <label for="precio">Precio:</label>
+            <label for="precio">Precio (€):</label>
             <input type="number" step="0.01" name="precio" id="precio" class="form-control" value="{{ old('precio') }}">
             @error('precio')
                 <div class="text-danger">{{ $message }}</div>
